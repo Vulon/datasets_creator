@@ -14,31 +14,31 @@ public class DetectedImage {
     @Column(name = "path", unique = true)
     private String path;
 
-    @Column(name = "object_x")
-    private int object_x;
+    @Column(name = "object_x1")
+    private int object_x1;
 
-    @Column(name = "object_y")
-    private int object_y;
+    @Column(name = "object_y1")
+    private int object_y1;
 
-    @Column(name = "object_w")
-    private int object_w;
+    @Column(name = "object_x2")
+    private int object_x2;
 
-    @Column(name = "object_h")
-    private int object_h;
+    @Column(name = "object_y2")
+    private int object_y2;
 
-    public DetectedImage(String path, int object_x, int object_y, int object_w, int object_h) {
+    public DetectedImage(String path, int object_x1, int object_y1, int object_x2, int object_y2) {
         this.path = path;
-        this.object_x = object_x;
-        this.object_y = object_y;
-        this.object_w = object_w;
-        this.object_h = object_h;
+        this.object_x1 = object_x1;
+        this.object_y1 = object_y1;
+        this.object_x2 = object_x2;
+        this.object_y2 = object_y2;
     }
 
     public void updateData(DetectedImage other){
-        this.object_x = other.object_x;
-        this.object_y = other.object_y;
-        this.object_w = other.object_w;
-        this.object_h = other.object_h;
+        this.object_x1 = other.object_x1;
+        this.object_y1 = other.object_y1;
+        this.object_x2 = other.object_x2;
+        this.object_y2 = other.object_y2;
     }
 
     public DetectedImage() {
@@ -49,23 +49,33 @@ public class DetectedImage {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         DetectedImage that = (DetectedImage) o;
-        if (object_x != that.object_x) return false;
-        if (object_y != that.object_y) return false;
-        if (object_w != that.object_w) return false;
-        if (object_h != that.object_h) return false;
+        if (object_x1 != that.object_x1) return false;
+        if (object_y1 != that.object_y1) return false;
+        if (object_x2 != that.object_x2) return false;
+        if (object_y2 != that.object_y2) return false;
         if (!id.equals(that.id)) return false;
         return path.equals(that.path);
 
+    }
+
+    public void setFirstPoint(int x, int y){
+        object_x1 = x;
+        object_y1 = y;
+    }
+
+    public void setSecondPoint(int x, int y){
+        object_x2 = x;
+        object_y2 = y;
     }
 
     @Override
     public int hashCode() {
         int result = id.hashCode();
         result = 31 * result + path.hashCode();
-        result = 31 * result + object_x;
-        result = 31 * result + object_y;
-        result = 31 * result + object_w;
-        result = 31 * result + object_h;
+        result = 31 * result + object_x1;
+        result = 31 * result + object_y1;
+        result = 31 * result + object_x2;
+        result = 31 * result + object_y2;
         return result;
     }
 
@@ -74,10 +84,10 @@ public class DetectedImage {
         return "DetectedImage{" +
                 "id=" + id +
                 ", path='" + path + '\'' +
-                ", object_x=" + object_x +
-                ", object_y=" + object_y +
-                ", object_w=" + object_w +
-                ", object_h=" + object_h +
+                ", object_x1=" + object_x1 +
+                ", object_y1=" + object_y1 +
+                ", object_x2=" + object_x2 +
+                ", object_y2=" + object_y2 +
                 '}';
     }
 
@@ -97,35 +107,35 @@ public class DetectedImage {
         this.path = path;
     }
 
-    public int getObject_x() {
-        return object_x;
+    public int getObject_x1() {
+        return object_x1;
     }
 
-    public void setObject_x(int object_x) {
-        this.object_x = object_x;
+    public void setObject_x1(int object_x1) {
+        this.object_x1 = object_x1;
     }
 
-    public int getObject_y() {
-        return object_y;
+    public int getObject_y1() {
+        return object_y1;
     }
 
-    public void setObject_y(int object_y) {
-        this.object_y = object_y;
+    public void setObject_y1(int object_y1) {
+        this.object_y1 = object_y1;
     }
 
-    public int getObject_w() {
-        return object_w;
+    public int getObject_x2() {
+        return object_x2;
     }
 
-    public void setObject_w(int object_w) {
-        this.object_w = object_w;
+    public void setObject_x2(int object_x2) {
+        this.object_x2 = object_x2;
     }
 
-    public int getObject_h() {
-        return object_h;
+    public int getObject_y2() {
+        return object_y2;
     }
 
-    public void setObject_h(int object_h) {
-        this.object_h = object_h;
+    public void setObject_y2(int object_y2) {
+        this.object_y2 = object_y2;
     }
 }

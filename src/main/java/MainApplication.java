@@ -16,10 +16,10 @@ public class MainApplication extends Application {
         Parent parent = fxmlLoader.load();
         MainController controller = fxmlLoader.getController();
         controller.init(stage);
-        Scene scene = new Scene(parent, 800, 700);
+        Scene scene = new Scene(parent, 1000, 800);
         stage.setScene(scene);
-        stage.setMinWidth(800);
-        stage.setMinHeight(700);
+        stage.setMinWidth(1000);
+        stage.setMinHeight(800);
         stage.show();
 
     }

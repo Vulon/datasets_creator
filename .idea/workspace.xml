@@ -21,7 +21,23 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand />
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="datasets_database@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="datasets_database@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="datasets_database@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="datasets_database: database" type="162271b6:PgImplModel$Database" />
+      </path>
+    </expand>
     <select />
   </component>
   <component name="DefaultGradleProjectSettings">
@@ -32,7 +48,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="640">
+            <state>
               <caret line="40" column="16" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="16" />
             </state>
           </provider>
@@ -41,8 +57,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/MainApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
+            <state relative-caret-position="176">
+              <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -53,41 +69,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/database/Entity/DetectedImage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+            <state relative-caret-position="455">
+              <caret line="67" column="22" selection-start-line="67" selection-start-column="22" selection-end-line="67" selection-end-column="22" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Controllers/MainController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="27">
-              <caret line="176" column="25" selection-start-line="176" selection-start-column="25" selection-end-line="176" selection-end-column="25" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#6702#6703#0" expanded="true" />
-                <element signature="e#6796#6797#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/database_clear.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="10" column="13" lean-forward="true" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-            </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Controllers/DatabaseClearController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Controllers/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="24" column="99" selection-start-line="24" selection-start-column="99" selection-end-line="24" selection-end-column="99" />
+            <state relative-caret-position="1533">
+              <caret line="288" column="54" selection-start-line="288" selection-start-column="54" selection-end-line="288" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -96,27 +88,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/database/DAO_Interfaces/DetectedImageDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="21" column="7" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+        <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/webcam.fxml">
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="400">
+              <caret line="25" column="103" selection-start-line="25" selection-start-column="103" selection-end-line="25" selection-end-column="103" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/database/DAO_Implemented/DetectedImageDAOImpl.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Controllers/WebcamFeedController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="95" column="21" selection-start-line="95" selection-start-column="21" selection-end-line="95" selection-end-column="21" />
+            <state relative-caret-position="90">
+              <caret line="65" column="39" selection-start-line="65" selection-start-column="39" selection-end-line="65" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#0#38#1" expanded="true" />
-                <element signature="e#0#18#1" expanded="true" />
-                <element signature="e#0#38#1" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -124,12 +111,28 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/mainscene.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1680">
-              <caret line="107" column="14" selection-start-line="107" selection-start-column="14" selection-end-line="107" selection-end-column="14" />
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="1376">
+              <caret line="86" column="14" selection-start-line="86" selection-start-column="14" selection-end-line="86" selection-end-column="14" />
             </state>
           </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/database/DAO_Implemented/DetectedImageDAOImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="104" column="21" selection-start-line="104" selection-start-column="21" selection-end-line="104" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#0#38#1" expanded="true" />
+                <element signature="e#0#18#1" expanded="true" />
+                <element signature="e#0#38#1" expanded="true" />
+                <element signature="e#0#20#1" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -145,6 +148,12 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>512</find>
+      <find>slider_w</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -158,16 +167,19 @@
         <option value="$PROJECT_DIR$/src/test/java/TestsRunner.java" />
         <option value="$PROJECT_DIR$/src/test/java/database/Entity/DetectedImageTest.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/fxml/mainscene.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/database/Entity/DetectedImage.java" />
         <option value="$PROJECT_DIR$/src/main/java/Utils/CSVFileTool.java" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/database.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/MainApplication.java" />
         <option value="$PROJECT_DIR$/src/main/java/database/DAO_Interfaces/DetectedImageDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/database/DAO_Implemented/DetectedImageDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Controllers/MainController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/database_clear.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/Controllers/DatabaseClearController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/MainApplication.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/fxml/webcam.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/Controllers/WebcamFeedController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/fxml/mainscene.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/database/Entity/DetectedImage.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/11f51561-eed3-49f6-95a9-41eeb377f62b/console.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/database/DAO_Implemented/DetectedImageDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Controllers/MainController.java" />
       </list>
     </option>
   </component>
@@ -179,15 +191,17 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="952" />
-    <option name="width" value="977" />
-    <option name="height" value="1038" />
+    <option name="x" value="951" />
+    <option name="width" value="978" />
+    <option name="height" value="524" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -252,6 +266,15 @@
               <item name="datasets_creator" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="Entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="datasets_creator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="datasets_creator" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -279,8 +302,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -290,6 +311,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/database" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -359,6 +381,7 @@
   </component>
   <component name="SvnConfiguration">
     <configuration />
+    <supportedVersion>125</supportedVersion>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -371,28 +394,31 @@
       <workItem from="1566671769369" duration="2117000" />
       <workItem from="1566674390909" duration="2469000" />
       <workItem from="1566717619841" duration="25015000" />
-      <workItem from="1566800545660" duration="6419000" />
+      <workItem from="1566800545660" duration="7021000" />
+      <workItem from="1566826608657" duration="13070000" />
+      <workItem from="1566888716706" duration="7665000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37147000" />
+    <option name="totallyTimeSpent" value="58484000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6908284" visible="true" weight="0.2627346" />
-      <window_info id="Structure" order="1" sideWeight="0.3091716" side_tool="true" visible="true" weight="0.2627346" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.38039216" visible="true" weight="0.2386059" />
+      <window_info id="Structure" order="1" sideWeight="0.61960787" side_tool="true" visible="true" weight="0.2386059" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info id="Persistence" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Database Console" weight="0.32956153" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.04384724" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.5021216" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49865952" visible="true" weight="0.27864215" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3536068" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -401,7 +427,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5013405" side_tool="true" weight="0.13861386" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.3281471" />
       <window_info anchor="bottom" id="Java Enterprise" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -412,16 +438,13 @@
       <window_info anchor="right" id="Maven" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Database" order="8" weight="0.107908845" />
+      <window_info anchor="right" id="Database" order="8" weight="0.30093834" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/11f51561-eed3-49f6-95a9-41eeb377f62b/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cgf.tld" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/268f2ee3-7b71-4cbe-b306-7146a3b6882d/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
@@ -469,28 +492,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="640">
-          <caret line="40" column="16" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/mainscene.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1680">
-          <caret line="107" column="14" selection-start-line="107" selection-start-column="14" selection-end-line="107" selection-end-column="14" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/database/Entity/DetectedImage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Utils/CSVFileTool.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -501,19 +502,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/MainApplication.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/database_clear.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
+        <state relative-caret-position="160">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controllers/DatabaseClearController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="30" column="13" lean-forward="true" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="40" column="16" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/MainApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/webcam.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="25" column="103" selection-start-line="25" selection-start-column="103" selection-end-line="25" selection-end-column="103" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/database/DAO_Interfaces/DetectedImageDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
+        <state relative-caret-position="314">
           <caret line="21" column="7" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -521,43 +555,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controllers/WebcamFeedController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="65" column="39" selection-start-line="65" selection-start-column="39" selection-end-line="65" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/mainscene.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="1376">
+          <caret line="86" column="14" selection-start-line="86" selection-start-column="14" selection-end-line="86" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/database/Entity/DetectedImage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="455">
+          <caret line="67" column="22" selection-start-line="67" selection-start-column="22" selection-end-line="67" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/11f51561-eed3-49f6-95a9-41eeb377f62b/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="25" selection-start-column="25" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/database/DAO_Implemented/DetectedImageDAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="95" column="21" selection-start-line="95" selection-start-column="21" selection-end-line="95" selection-end-column="21" />
+        <state relative-caret-position="391">
+          <caret line="104" column="21" selection-start-line="104" selection-start-column="21" selection-end-line="104" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#0#38#1" expanded="true" />
             <element signature="e#0#18#1" expanded="true" />
             <element signature="e#0#38#1" expanded="true" />
+            <element signature="e#0#20#1" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Controllers/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="176" column="25" selection-start-line="176" selection-start-column="25" selection-end-line="176" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#6702#6703#0" expanded="true" />
-            <element signature="e#6796#6797#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/database_clear.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="10" column="13" lean-forward="true" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controllers/DatabaseClearController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="24" column="99" selection-start-line="24" selection-start-column="99" selection-end-line="24" selection-end-column="99" />
+        <state relative-caret-position="1533">
+          <caret line="288" column="54" selection-start-line="288" selection-start-column="54" selection-end-line="288" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

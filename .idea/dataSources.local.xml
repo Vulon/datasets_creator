@@ -10,10 +10,5 @@
       <user-name>Client</user-name>
       <introspection-schemas>@:@</introspection-schemas>
     </data-source>
-    <data-source name="H2 - datasets_database" uuid="268f2ee3-7b71-4cbe-b306-7146a3b6882d">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="H2" exact-version="0" />
-      <secret-storage>master_key</secret-storage>
-      <user-name>Client</user-name>
-    </data-source>
   </component>
 </project>

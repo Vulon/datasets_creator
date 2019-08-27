@@ -95,4 +95,13 @@ public class DetectedImageDAOImpl implements DetectedImageDAO {
         session.getTransaction().commit();
         return count;
     }
+
+    public int deleteAll(){
+        startSession();
+        session.beginTransaction();
+        Query query = session.createQuery("delete DetectedImage");
+        int count = query.executeUpdate();
+        session.getTransaction().commit();
+        return count;
+    }
 }

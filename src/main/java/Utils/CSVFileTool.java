@@ -20,9 +20,9 @@ public class CSVFileTool {
                 "Path", "Object_x", "Object_y", "Object_w", "Object_h"
         });
         for(DetectedImage image : detectedImages){
-            String[] string = {image.getPath(), Integer.toString(image.getObject_x()),
-                    Integer.toString(image.getObject_y()), Integer.toString(image.getObject_w())
-            , Integer.toString(image.getObject_h())};
+            String[] string = {image.getPath(), Integer.toString(image.getObject_x1()),
+                    Integer.toString(image.getObject_y1()), Integer.toString(image.getObject_x2())
+            , Integer.toString(image.getObject_y2())};
             strings.add(string);
         }
         try (PrintWriter pw = new PrintWriter(outputFile)) {
