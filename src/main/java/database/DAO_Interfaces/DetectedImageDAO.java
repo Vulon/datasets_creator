@@ -19,5 +19,5 @@ public interface DetectedImageDAO {
 
     List<DetectedImage> getAll();
 
-    int deleteById(Integer id);
+    int deleteByPath(String path);
 }

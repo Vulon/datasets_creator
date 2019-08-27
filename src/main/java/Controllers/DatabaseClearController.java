@@ -25,7 +25,7 @@ public class DatabaseClearController {
         list_view.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             System.out.println(newValue);
             DetectedImage image = (DetectedImage)newValue;
-            int count = DetectedImageDAOImpl.getInstance().deleteById(image.getId());
+            int count = DetectedImageDAOImpl.getInstance().deleteByPath(image.getPath());
             if(count > 0){
                 updateList();
             }

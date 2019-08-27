@@ -8,6 +8,8 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
+import javafx.stage.Window;
+import javafx.stage.WindowEvent;
 
 import javax.imageio.ImageIO;
 import java.awt.Dimension;
@@ -57,8 +59,12 @@ public class WebcamFeedController {
                 }
 
                 Platform.runLater(()->{
-                    Image image = SwingFXUtils.toFXImage(webcam.getImage(), null);
-                    image_view.setImage(image);
+                    if(running.get()){
+                        Image image = SwingFXUtils
+                                .toFXImage(
+                                        webcam.getImage(), null);
+                        image_view.setImage(image);
+                    }
                 });
             }
         });
@@ -98,8 +104,7 @@ public class WebcamFeedController {
 
     @FXML
     private void handleCancel(){
-        running.set(false);
-        recording.set(false);
+        closeWebCam();
         image_view.getScene().getWindow().hide();
     }
 
@@ -128,9 +133,16 @@ public class WebcamFeedController {
     @Override
     protected void finalize() throws Throwable {
         super.finalize();
-        webcam.close();
-        videoThread.interrupt();
-        recordThread.interrupt();
-        System.out.println("Closing webcam");
+        closeWebCam();
     }
+
+    public void closeWebCam(){
+        webcam.close();
+        running.set(false);
+        recording.set(false);
+        recordThread.interrupt();
+        videoThread.interrupt();
+    }
+
+
 }

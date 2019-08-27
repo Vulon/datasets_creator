@@ -86,11 +86,11 @@ public class DetectedImageDAOImpl implements DetectedImageDAO {
     }
 
     @Override
-    public int deleteById(Integer id) {
+    public int deleteByPath(String path) {
         startSession();
         session.beginTransaction();
-        Query query = session.createQuery("delete DetectedImage where id = :param");
-        query.setParameter("param", id);
+        Query query = session.createQuery("delete DetectedImage where path = :param");
+        query.setParameter("param", path);
         int count = query.executeUpdate();
         session.getTransaction().commit();
         return count;

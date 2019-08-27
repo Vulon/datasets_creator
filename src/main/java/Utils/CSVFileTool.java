@@ -17,7 +17,7 @@ public class CSVFileTool {
     public static void writeToCSVFile(List<DetectedImage> detectedImages, File outputFile) throws FileNotFoundException {
         ArrayList<String[]> strings = new ArrayList<>(detectedImages.size() + 1);
         strings.add(new String[]{
-                "Path", "Object_x", "Object_y", "Object_w", "Object_h"
+                "Path", "Object_x1", "Object_y1", "Object_x2", "Object_y2"
         });
         for(DetectedImage image : detectedImages){
             String[] string = {image.getPath(), Integer.toString(image.getObject_x1()),

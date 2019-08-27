@@ -7,10 +7,6 @@ import javax.persistence.*;
 @Table(name = "detected_image")
 public class DetectedImage {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
-
-
     @Column(name = "path", unique = true)
     private String path;
 
@@ -44,19 +40,7 @@ public class DetectedImage {
     public DetectedImage() {
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        DetectedImage that = (DetectedImage) o;
-        if (object_x1 != that.object_x1) return false;
-        if (object_y1 != that.object_y1) return false;
-        if (object_x2 != that.object_x2) return false;
-        if (object_y2 != that.object_y2) return false;
-        if (!id.equals(that.id)) return false;
-        return path.equals(that.path);
 
-    }
 
     public void setFirstPoint(int x, int y){
         object_x1 = x;
@@ -69,21 +53,9 @@ public class DetectedImage {
     }
 
     @Override
-    public int hashCode() {
-        int result = id.hashCode();
-        result = 31 * result + path.hashCode();
-        result = 31 * result + object_x1;
-        result = 31 * result + object_y1;
-        result = 31 * result + object_x2;
-        result = 31 * result + object_y2;
-        return result;
-    }
-
-    @Override
     public String toString() {
         return "DetectedImage{" +
-                "id=" + id +
-                ", path='" + path + '\'' +
+                "path='" + path + '\'' +
                 ", object_x1=" + object_x1 +
                 ", object_y1=" + object_y1 +
                 ", object_x2=" + object_x2 +
@@ -91,12 +63,30 @@ public class DetectedImage {
                 '}';
     }
 
-    public Integer getId() {
-        return id;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        DetectedImage image = (DetectedImage) o;
+
+        if (object_x1 != image.object_x1) return false;
+        if (object_y1 != image.object_y1) return false;
+        if (object_x2 != image.object_x2) return false;
+        if (object_y2 != image.object_y2) return false;
+        return path.equals(image.path);
+
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    @Override
+    public int hashCode() {
+        int result = path.hashCode();
+        result = 31 * result + object_x1;
+        result = 31 * result + object_y1;
+        result = 31 * result + object_x2;
+        result = 31 * result + object_y2;
+        return result;
     }
 
     public String getPath() {

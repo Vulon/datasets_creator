@@ -1,6 +1,7 @@
 package Controllers;
 
 import Utils.CSVFileTool;
+import com.sun.istack.internal.Nullable;
 import database.DAO_Implemented.DetectedImageDAOImpl;
 import database.Entity.DetectedImage;
 import javafx.fxml.FXML;
@@ -15,6 +16,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
+import javafx.util.Pair;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -84,6 +87,7 @@ public class MainController {
             }
 
             controller.init(path, this);
+            stage.addEventHandler(WindowEvent.WINDOW_CLOSE_REQUEST, event -> controller.closeWebCam());
             Scene scene = new Scene(parent, 850, 600);
             stage.setScene(scene);
             stage.setMinHeight(600);
@@ -94,6 +98,8 @@ public class MainController {
         }
     }
 
+    private boolean mousePressed = false;
+    Pair<Integer, Integer> initPoint;
 
 
     public void init(Stage mainStage){
@@ -104,13 +110,21 @@ public class MainController {
         imageView.setFitHeight(IMG_HEIGHT);
         imageView.setFitWidth(IMG_WIDTH);
         imageView.addEventHandler(MouseEvent.MOUSE_PRESSED, event -> {
+            initPoint = new Pair<>((int)event.getX(), (int)event.getY());
             System.out.println("First point: " + event.getX() + " " + event.getY());
             currentDetectedImage.setFirstPoint((int)event.getX(), (int)event.getY());
+            mousePressed = true;
         });
         imageView.addEventHandler(MouseEvent.MOUSE_RELEASED, event -> {
             System.out.println("Second point: " + event.getX() + " " + event.getY());
             currentDetectedImage.setSecondPoint((int)event.getX(), (int)event.getY());
-            drawRectangle();
+            mousePressed = false;
+            drawRectangle(null);
+        });
+        imageView.addEventHandler(MouseEvent.MOUSE_DRAGGED, event -> {
+            if(mousePressed){
+                drawRectangle(new Rect(initPoint.getKey(), initPoint.getValue(), (int)event.getX(), (int)event.getY()));
+            }
         });
         update();
     }
@@ -171,6 +185,7 @@ public class MainController {
         }else{
             image = currentDetectedImage;
         }
+        System.out.println("saving image data: " + image);
         DetectedImageDAOImpl.getInstance().save(image);
     }
 
@@ -225,30 +240,64 @@ public class MainController {
 //        return  null;
 //    }
 
+    private class Rect{
+        public int x1;
+        public int x2;
+        public int y1;
+        public int y2;
 
+        public Rect(int x1, int y1, int x2, int y2) {
+            this.x1 = x1;
+            this.x2 = x2;
+            this.y1 = y1;
+            this.y2 = y2;
+        }
+        public Rect(DetectedImage image){
+            this.x1 = currentDetectedImage.getObject_x1();
+            this.x2 = currentDetectedImage.getObject_x2();
+            this.y1 = currentDetectedImage.getObject_y1();
+            this.y2 = currentDetectedImage.getObject_y2();
+        }
+        public int getTop(){
+            int top = Math.min(y1, y2);
+            top = Math.max(top, 1);
+            return top;
+        }
+        public int getBot(double maxHeight){
+            int bot = Math.max(y1, y2);
+            return Math.min((int)maxHeight - 1, bot);
+        }
+        public int getLeft(){
+            int left = Math.min(x1, x2);
+            return Math.max(left, 0);
+        }
+        public int getRight(double maxWidth){
+            int right = Math.max(x1, x2);
+            return Math.min((int)maxWidth - 1, right);
+        }
+    }
 
-    private void drawRectangle(){
+    private void drawRectangle(@Nullable Rect rectangle){
         if(currentDetectedImage == null || currentImage == null){
             return;
+        }
+        if(rectangle == null){
+            rectangle = new Rect(currentDetectedImage);
         }
 
         WritableImage writableImage = new WritableImage(currentImage.getPixelReader(), (int)currentImage.getWidth(), (int)currentImage.getHeight());
         PixelWriter pixelWriter = writableImage.getPixelWriter();
-        int top = Math.min(currentDetectedImage.getObject_y1(), currentDetectedImage.getObject_y2());
-        int bot = Math.max(currentDetectedImage.getObject_y1(), currentDetectedImage.getObject_y2());
-        int left = Math.min(currentDetectedImage.getObject_x1(), currentDetectedImage.getObject_x2());
-        int right = Math.max(currentDetectedImage.getObject_x1(), currentDetectedImage.getObject_x2());
-        top = Math.max(top, 0);
-        bot = Math.min(bot, (int)currentImage.getHeight() - 1);
-        left = Math.max(left, 0);
-        right = Math.min(right, (int)currentImage.getWidth() - 1);
-        for(int i = left; i <= right; i++){
-            pixelWriter.setColor(i, top, Color.rgb(255, 0, 0));
-            pixelWriter.setColor(i, bot, Color.rgb(255, 0, 0));
+
+        System.out.println("drawing rect from " + rectangle.getLeft()+ " " + rectangle.getTop()
+                + " to " + rectangle.getRight(currentImage.getWidth()) + " " + rectangle.getBot(currentImage.getHeight()));
+
+        for(int i = rectangle.getLeft(); i <= rectangle.getRight(currentImage.getWidth()); i++){
+            pixelWriter.setColor(i, rectangle.getTop(), Color.rgb(255, 0, 0));
+            pixelWriter.setColor(i, rectangle.getBot(currentImage.getHeight()), Color.rgb(255, 0, 0));
         }
-        for(int i = top; i <= bot; i++){
-            pixelWriter.setColor(left, i, Color.rgb(255, 0, 0));
-            pixelWriter.setColor(right, i, Color.rgb(255, 0, 0));
+        for(int i = rectangle.getTop(); i <= rectangle.getBot(currentImage.getHeight()); i++){
+            pixelWriter.setColor(rectangle.getLeft(), i, Color.rgb(255, 0, 0));
+            pixelWriter.setColor(rectangle.getRight(currentImage.getWidth()), i, Color.rgb(255, 0, 0));
         }
         imageView.setImage(writableImage);
     }
@@ -257,7 +306,7 @@ public class MainController {
 
         updateImageView();
         updateLabel();
-        drawRectangle();
+        drawRectangle(null);
     }
 
     private void updateLabel(){
@@ -294,6 +343,7 @@ public class MainController {
             }else{
                 System.out.println("LOADED old DetectedImage" + currentDetectedImage);
             }
+            initPoint = new Pair<>(currentDetectedImage.getObject_x1(), currentDetectedImage.getObject_y1());
         }catch (IOException e){
             e.printStackTrace();
         }
