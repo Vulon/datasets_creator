@@ -103,7 +103,7 @@ public class WebcamFeedController {
     }
 
     @FXML
-    private void handleCancel(){
+    public void handleCancel(){
         closeWebCam();
         image_view.getScene().getWindow().hide();
     }
@@ -117,7 +117,7 @@ public class WebcamFeedController {
     private AtomicBoolean recording;
 
     @FXML
-    private void handleRecord(){
+    public void handleRecord(){
         if(recording.get()){
             System.out.println("Stop recording");
             record_button.setStyle("-fx-background-color: grey");

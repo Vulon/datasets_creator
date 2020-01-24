@@ -4,6 +4,7 @@ import Utils.CSVFileTool;
 import com.sun.istack.internal.Nullable;
 import database.DAO_Implemented.DetectedImageDAOImpl;
 import database.Entity.DetectedImage;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,6 +13,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.image.*;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
@@ -81,7 +83,10 @@ public class MainController {
             WebcamFeedController controller = loader.getController();
             String path;
             if(fileArrayList.size() < 1){
-                path = "../datasets_creator/images";
+                path = "images";
+                File file = new File(path);
+                path = file.getAbsolutePath();
+                System.out.println("Absolute save path " + path);
             }else{
                 path = fileArrayList.get(0).getParent();
             }
@@ -89,6 +94,14 @@ public class MainController {
             controller.init(path, this);
             stage.addEventHandler(WindowEvent.WINDOW_CLOSE_REQUEST, event -> controller.closeWebCam());
             Scene scene = new Scene(parent, 850, 600);
+            scene.setOnKeyReleased(new EventHandler<KeyEvent>() {
+                @Override
+                public void handle(KeyEvent event) {
+                    switch (event.getCode()) {
+                        case CONTROL:  controller.handleCancel(); break;
+                    }
+                }
+            });
             stage.setScene(scene);
             stage.setMinHeight(600);
             stage.setMinWidth(850);
@@ -283,13 +296,14 @@ public class MainController {
         }
         if(rectangle == null){
             rectangle = new Rect(currentDetectedImage);
+            System.out.println("drawing rect from " + rectangle.getLeft()+ " " + rectangle.getTop()
+                    + " to " + rectangle.getRight(currentImage.getWidth()) + " " + rectangle.getBot(currentImage.getHeight()));
         }
 
         WritableImage writableImage = new WritableImage(currentImage.getPixelReader(), (int)currentImage.getWidth(), (int)currentImage.getHeight());
         PixelWriter pixelWriter = writableImage.getPixelWriter();
 
-        System.out.println("drawing rect from " + rectangle.getLeft()+ " " + rectangle.getTop()
-                + " to " + rectangle.getRight(currentImage.getWidth()) + " " + rectangle.getBot(currentImage.getHeight()));
+
 
         for(int i = rectangle.getLeft(); i <= rectangle.getRight(currentImage.getWidth()); i++){
             pixelWriter.setColor(i, rectangle.getTop(), Color.rgb(255, 0, 0));
